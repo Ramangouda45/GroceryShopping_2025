@@ -1,0 +1,114 @@
+           {% load static %}
+         {% include 'header1.html' %}
+
+  <div class="container-fluid" style="margin-top:100px">
+                    <div class="row">
+                        </div>
+                </div>
+
+                <div class="container mt-3">
+                    <div class="row">
+                        <h1 class="text-dark"><b>Create Your Account:</b></h1>
+                        <h4>{{msg}}</h4>
+
+
+                        <form method="post">
+                            {% csrf_token %}
+
+                            {% for r in data %}
+
+                        <div class="mt-3">
+                            <label><b>First Name:</b></label>
+                            <input type="text" value="{{r.firstname}}"  name="first_name"
+                            class="form-control border border-2
+                            border-dark w-50" required pattern="[A-Za-z]+" title="Enter characters only">
+                        </div>
+                        <div class="mt-3">
+                            <label><b> Last Name:</b></label>
+                            <input type="text" value="{{r.lastname}}" name="last_name"
+                            class="form-control border border-2
+                            border-dark w-50" required pattern="[A-Za-z]+" title="Enter characters only">
+                        </div>
+                            <div class="mt-3 mb-3">
+                <label><b>Gender:</b></label>
+                <br>
+                Male<input type="radio"name="gender"
+                class="form-input check"value="male" required>
+                Female<input type="radio"name="gender"
+                class="from-input check"value="female" required>
+            </div>
+                        <div class="mt-3">
+                            <label><b>DOB:</b></label>
+                            <input type="date" value="{{r.dob}}" name="dob"
+                            class="form-control border border-2
+                            border-dark w-50" required>
+                    </div>
+                    <div class="mt-3">
+                      <label for="district">Select City:</label>
+<select name="city" id="district" class="form-control border border-2 border-dark w-50" required pattern="[A-Za-z\s]+" title="Enter characters only">
+  <option value="BAGALKOT">BAGALKOT</option>
+  <option value="BALLARI">BALLARI</option>
+  <option value="BELAGAVI">BELAGAVI</option>
+  <option value="BENGALURU RURAL">BENGALURU RURAL</option>
+  <option value="BENGALURU URBAN">BENGALURU URBAN</option>
+  <option value="BIDAR">BIDAR</option>
+  <option value="CHAMARAJANAGAR">CHAMARAJANAGAR</option>
+  <option value="CHIKKABALLAPUR">CHIKKABALLAPUR</option>
+  <option value="CHIKKAMAGALURU">CHIKKAMAGALURU</option>
+  <option value="CHITRADURGA">CHITRADURGA</option>
+  <option value="DAKSHINA KANNADA">DAKSHINA KANNADA</option>
+  <option value="DAVANAGERE">DAVANAGERE</option>
+  <option value="DHARWAD">DHARWAD</option>
+  <option value="GADAG">GADAG</option>
+  <option value="HASSAN">HASSAN</option>
+  <option value="HAVERI">HAVERI</option>
+  <option value="KALABURAGI">KALABURAGI</option>
+  <option value="KODAGU">KODAGU</option>
+  <option value="KOLAR">KOLAR</option>
+  <option value="KOPPAL">KOPPAL</option>
+  <option value="MANDYA">MANDYA</option>
+  <option value="MYSURU">MYSURU</option>
+  <option value="RAICHUR">RAICHUR</option>
+  <option value="RAMANAGARA">RAMANAGARA</option>
+  <option value="SHIVAMOGGA">SHIVAMOGGA</option>
+  <option value="TUMAKURU">TUMAKURU</option>
+  <option value="UDUPI">UDUPI</option>
+  <option value="UTTARA KANNADA">UTTARA KANNADA</option>
+  <option value="VIJAYAPURA">VIJAYAPURA</option>
+</select>
+
+
+                </div>
+                
+                <div class="mt-3 mb-3">
+                    <label><b>ADDRESS:</b></label>
+                    <textarea name="address"
+                    class="form-control border border-2
+                    border-dark w-50" required pattern="[A-Za-z0-9,\s]+" title="Enter characters only">
+                        {{r.address}}
+                    </textarea>
+                </div>
+                    <div class="mt-3">
+                        <label><b>Pincode:</b></label>
+                        <input type="text" value="{{r.pincode}}" name="pincode"
+                        class="form-control border border-2
+                        border-dark w-50" required pattern="[0-9]{6}" title="Enter valid pincode">
+                    </div>
+                    <div class="mt-3">
+                        <label><b>Email</b></label>
+                        <input type="email" value="{{r.email}}" name="email"
+                        class="form-control border border-2
+                        border-dark w-50" required>
+                </div>
+                
+            <button type="submit"class="btn btn-dark w-50 mb-3 mt-3 "><b> Create An Account</b></button>
+            </form>
+              {% endfor %}
+
+            </div>
+            </div>
+           {% include 'footer.html' %}
+
+
+
+

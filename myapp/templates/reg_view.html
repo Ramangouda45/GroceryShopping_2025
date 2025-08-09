@@ -1,0 +1,51 @@
+{% load static %}
+{% include 'header1.html' %}
+<div class="container-fluid" style="margin-top:120px">
+    <div class="row">
+      <h1 class="text-dark fs-60 fw-bold text-center"> Registered Users Details</h1>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Pincode</th>
+          <th>Email </th>
+          <th>Action </th>
+          <th>Action </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in udata %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+          <td> {{r.firstname}}</td>
+          <td>{{r.lastname}} </td>
+          <td>{{r.gender}} </td>
+          <td> {{r.dob}}</td>
+          <td>{{r.city}} </td>
+          <td>{{r.address}}</td>
+          <td>{{r.pincode}}</td>
+          <td>{{r.email}}</td>
+          <td>
+  <a href="{% url 'reg_del' r.id %}" onclick="return confirm('Are you sure you want to delete this user?');">
+     <i class="fa fa-trash text-danger"></i>
+  </a>
+</td>
+          <td> <a href="{% url 'reg_edit' r.id %}">  <i class="fa fa-edit text-success"></i>  </a> </td>
+
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+</div
+{% include 'footer.html' %}
+
+
+

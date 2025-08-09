@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'header1.html' %}
+<div class="container-fluid" style="margin-top:120px">
+    <div class="row">
+
+      <h1 class="text-dark fs-60 fw-bold text-center">Grocery Details</h1>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Grocery</th>
+          <th>Action</th>
+          <th>Action</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in udata %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+          <td> {{r.category}}</td>
+          <td>{{r.grocery_name}} </td>
+
+         <td>
+  <a href="{% url 'grocery_del' r.id %}" onclick="return confirm('Are you sure you want to delete this user?');">
+    Delete
+  </a>
+</td>
+              <td> <a href="{% url 'grocery_edit' r.id %}">  <i class="fa fa-edit text-success"></i> </a> </td>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+ </div>
+</div>
+{% include 'footer.html' %}

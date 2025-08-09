@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'user_header1.html' %}
+
+<div class="container-fluid" style="margin-top:100px">
+    <div class="row">
+        <!-- Empty row, consider adding content or removing -->
+    </div>
+</div>
+ <div class="container mt-3">
+    <div class="row">
+
+<h1 class="text-white fs-10 fw-bold bg-danger">Payment Successful...!</h1>
+       {% if messages %}
+    {% for message in messages %}
+        <div class="mt-5 alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+    </div>
+ </div>
+
+{% include 'footer1.html' %}

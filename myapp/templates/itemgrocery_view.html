@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'admin_header1.html' %}
+
+<div class="container" style="margin-top:120px">
+    <div class="row">
+      <h1 class="text-dark fs-80 fw-bold text-center">Grocery Item</h1>
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Name</th>
+          <th>Qty</th>
+          <th>Uom</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>Stock</th>
+          <th>Action</th>
+          <th>Action</th>
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in udata %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+          <td> {{r.category}}</td>
+          <td>{{r.name}} </td>
+          <td>{{r.qty}} </td>
+          <td> {{r.uom}}</td>
+          <td>{{r.price}} </td>
+<td><img src="/media/{{r.image}}" style="width:200px; height:200px;"></td>
+          <td>{{r.stock}}</td>
+<td>
+  <a href="{% url 'itemgrocery_del' r.id %}" onclick="return confirm('Are you sure you want to delete this user?');">
+       <i class="fa fa-trash text-danger"></i>
+  </a>
+</td>
+          <td> <a href="{% url 'itemgrocery_edit' r.id %}">  <i class="fa fa-edit text-success"></i> </a> </td>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+{% include 'footer1.html' %}

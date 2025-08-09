@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'admin_header1.html' %}
+  <div class="container-fluid" style="margin-top:100px">
+    <div class="row p-3">
+
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <h1 class="text-dark fw-bold">Grocery Category:</h1>
+      <h4>{{msg}}</h4>
+      <form method="post">
+        {% csrf_token %}
+                                      {% for r in data %}
+
+        <div class="mt-3">
+                            <label><b>Category:</b></label>
+                            <input type="text"value="{{r.category}}"name="category"
+                            class="form-control border border-2
+                            border-dark w-50" required pattern="[A-Za-z]+" title="Enter characters only">
+                        </div>
+        <br>
+        <button type="submit" class="btn btn-dark w-50"><b>Add Category</b></button>
+      </form>
+                      {% endfor %}
+
+    </div>
+  </div>
+{% include 'footer1.html' %}

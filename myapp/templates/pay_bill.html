@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'user_header1.html' %}
+
+<div class="container tex-center" style="margin-top:120px">
+    <div class="row">
+      <h1 class="text-dark fs-80 fw-bold text-center">Pay total Bill of ₹ {{total}} </h1>
+      <div class="text-center bg-danger w-30 text-white p-3">
+             <form  method="POST">
+{% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_Z1qzBJgJYDcceP"
+    data-amount={{total}}00
+    data-buttontext="Pay order Amount"
+    data-name="Commercial BillBoards"
+    data-description="Grocery Amount"
+    data-image=""
+    data-prefill.name="Customer"
+    data-prefill.email="useremail@gmail.com"
+    data-theme.color="#F37254"></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+      </div>
+    </div>
+    </div>
+
+{% include 'footer1.html' %}

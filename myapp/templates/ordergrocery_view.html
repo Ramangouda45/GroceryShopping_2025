@@ -1,0 +1,50 @@
+{% load static %}
+{% include 'header1.html' %}
+
+<div class="container-fluid" style="margin-top:120px">
+    <div class="row">
+      <h1 class="text-dark fs-60 fw-bold text-center">Grocery Order Details</h1>
+       <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Userid</th>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Order_date</th>
+          <th>Order_time</th>
+          <th>Payment_status </th>
+          <th>Order_status </th>
+          <th>Action</th>
+          <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in udata %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+          <td> {{r.userid}}</td>
+          <td>{{r.item}} </td>
+          <td>{{r.qty}} </td>
+          <td> {{r.price}}</td>
+          <td>{{r.total}} </td>
+          <td>{{r.order_date}}</td>
+          <td>{{r.order_time}}</td>
+          <td>{{r.payment_status}}</td>
+          <td>{{r.order_status}}</td>
+<td>
+  <a href="{% url 'ordergrocery_del' r.id %}" onclick="return confirm('Are you sure you want to delete this user?');">
+       <i class="fa fa-trash text-danger"></i>
+  </a>
+</td>
+              <td> <a href="{% url 'ordergrocery_edit' r.id %}">  <i class="fa fa-edit text-success"></i> </a> </td>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
+{% include 'footer.html' %}

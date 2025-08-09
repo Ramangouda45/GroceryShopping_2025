@@ -1,0 +1,51 @@
+{% load static %}
+{% include 'admin_header1.html' %}
+
+<div class="container" style="margin-top:120px">
+    <div class="row">
+      <h1 class="text-dark fs-80 fw-bold text-center">Customer Order Details </h1>
+      <p> Date : {{dd}}</p>
+        {% if cart_items %}
+             <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+          <th>#</th>
+            <th>Order No</th>
+          <th>Item Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in cart_items %}
+        <tr>
+          <td>{{forloop.counter}} </td>
+           <td> {{r.order_no}}</td>
+          <td> {{r.item.name}}</td>
+          <td>{{r.qty}} </td>
+          <td>{{r.price}} </td>
+            <td>{{r.total}} </td>
+
+          {% endfor %}
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td class="fs-4"> Grand Total</td>
+            <td> </td> <td> </td> <td></td>
+            <td class="fs-4"> {{total}}</td>
+          </tr>
+        </tfoot>
+
+      </table>
+      {% else %}
+      <p> No Orders</p>
+      {% endif %}
+
+    </div>
+    </div>
+
+{% include 'footer1.html' %}
