@@ -126,7 +126,8 @@ python manage.py migrate
 python manage.py runserver
 
 7️⃣ Open Browser
-http://127.0.0.1:8000/
+ http://127.0.0.1:8000/
+
 
 🔑 Default Roles
 
