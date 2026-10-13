@@ -1,38 +1,42 @@
-🛒 Grocery Shopping Web Application (Django)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Django.svg" alt="Django Logo" width="90" height="90" />
+</p>
 
-A Grocery Shopping Web Application built using Django Framework that allows users to browse grocery items, place orders, make payments, and submit reviews. The project includes admin and user roles, authentication, OTP verification, and database management using SQLite.
+<h1 align="center">🛒 Grocery Shopping Web Application</h1>
 
-📌 Project Overview
+<p align="center">
+  A full-featured online grocery shopping platform built with the Django framework, featuring role-based access, OTP verification, order tracking, and an integrated admin workflow.
+</p>
 
-This project is designed to simplify grocery shopping by providing an online platform where users can:
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
+  <img src="https://img.shields.io/badge/Platform-Web-brightgreen?style=for-the-badge" alt="Platform" />
+</p>
 
-Register and log in securely
+---
 
-Browse grocery categories and items
+## 📌 Project Overview
 
-Add items to cart and place orders
+This application bridges grocery retailers and everyday customers by digitizing the purchase workflow. Customers can register securely, verify accounts via OTP, browse categorized products, complete checkout with simulated payments, and leave ratings. Administrators retain complete control over inventory, user listings, order fulfillments, and review moderation.
 
-Make payments
+---
 
-Give reviews and ratings
+## 🛠️ Tech Stack
 
-Receive OTP verification
+* **Backend:** Python, Django
+* **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
+* **Database:** SQLite
+* **Authentication & Mail:** Django Auth, SMTP (OTP verification)
+* **IDE / Environment:** PyCharm / Visual Studio Code
 
-Admins can manage users, groceries, categories, orders, and reviews.
+---
 
-🛠️ Technologies Used
+## 📂 Project Structure
 
-Backend: Python, Django
-
-Frontend: HTML, CSS, Bootstrap
-
-Database: SQLite
-
-Tools: PyCharm / VS Code
-
-Email Service: SMTP (for OTP)
-
-📂 Project Structure
+```text
 GroceryShopping_2025/
 │
 ├── grocery/
@@ -45,108 +49,13 @@ GroceryShopping_2025/
 │   │   ├── wsgi.py
 │   │   └── asgi.py
 │   │
-│   ├── myapp/
-│   │   ├── models.py
-│   │   ├── views.py
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   └── tests.py
+│   └── myapp/
+│       ├── models.py
+│       ├── views.py
+│       ├── admin.py
+│       ├── apps.py
+│       └── tests.py
 │
 ├── media/
 ├── .venv/
 └── .idea/
-
-🧩 Features
-👤 User Features
-
-User Registration & Login
-
-OTP verification
-
-Browse grocery items
-
-Place grocery orders
-
-Online payment option
-
-Add reviews and ratings
-
-🔐 Admin Features
-
-Admin login
-
-Manage grocery categories
-
-Add / update grocery items
-
-View orders and payments
-
-Manage user reviews
-
-🗄️ Database Models
-
-Some key models used:
-
-UserLogin – Stores login credentials
-
-UserRegistration – Stores user profile details
-
-AddCategory – Grocery categories
-
-AddGrocery – Grocery products
-
-GroceryItems – Item details
-
-GroceryOrder – Order management
-
-AddPayment – Payment records
-
-AddReviews – User feedback
-
-OtpCode – OTP verification
-
-🚀 How to Run the Project
-1️⃣ Extract the Project
-unzip GroceryShopping_2025.zip
-
-2️⃣ Navigate to Project Folder
-cd GroceryShopping_2025/grocery
-
-3️⃣ Activate Virtual Environment (optional)
-.venv\Scripts\activate
-
-4️⃣ Install Dependencies
-pip install django
-
-5️⃣ Run Migrations
-python manage.py makemigrations
-python manage.py migrate
-
-6️⃣ Start the Server
-python manage.py runserver
-
-7️⃣ Open Browser
- http://127.0.0.1:8000/
-
-
-🔑 Default Roles
-
-Admin: Manages groceries and users
-
-User: Shops and places orders
-
-(Admin credentials can be added directly via database or Django admin panel)
-
-📸 Screenshots
-
-(Add screenshots here for better presentation)
-
-🎯 Purpose of the Project
-
-Academic mini / final project
-
-Learning Django MVC architecture
-
-Understanding authentication & database models
-
-Implementing real-world e-commerce features
