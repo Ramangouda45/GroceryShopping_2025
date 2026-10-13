@@ -60,6 +60,34 @@ GroceryShopping_2025/
 ├── .venv/
 └── .idea/
 
+## 🧩 Key Features
 
+### 👤 Customer Experience
+* **Authentication & Security:** Secure signup and signin backed by SMTP OTP generation.
+* **Catalog Exploration:** Filter items across dynamic grocery categories.
+* **Cart & Order Placement:** Seamless checkout pipeline tracking order volume and pricing.
+* **Payment Records:** Automated storage of transaction receipts.
+* **Community Feedback:** Product ratings and review submissions.
 
-🧩 Key Features👤 Customer ExperienceAuthentication & Security: Secure signup and signin backed by SMTP OTP generation.Catalog Exploration: Filter items across dynamic grocery categories.Cart & Order Placement: Seamless checkout pipeline tracking order volume and pricing.Payment Records: Automated storage of transaction receipts.Community Feedback: Product ratings and review submissions.🔐 Administrative ToolsInventory Control: Create, update, or remove grocery categories and inventory items.Order Oversight: Monitor real-time orders, delivery states, and payment records.User & Feedback Moderation: Supervise customer profiles and review postings.🗄️ Database ArchitectureModelPurposeUserLoginCore user identity and authentication credentialsUserRegistrationExtended personal metadata and profile informationAddCategoryCategory labels and sorting structureAddGroceryCatalog items and grocery inventoryGroceryItemsGranular product attributes (weight, SKU, variants)GroceryOrderOrder manifests, statuses, and customer mappingsAddPaymentTransaction ledgers and settlement logsAddReviewsCustomer ratings, reviews, and timestampsOtpCodeTemporal tokens for account validation
+### 🔐 Administrative Tools
+* **Inventory Control:** Create, update, or remove grocery categories and inventory items.
+* **Order Oversight:** Monitor real-time orders, delivery states, and payment records.
+* **User & Feedback Moderation:** Supervise customer profiles and review postings.
+
+---
+
+## 🗄️ Database Architecture
+
+| Model | Purpose |
+| :--- | :--- |
+| `UserLogin` | Core user identity and authentication credentials |
+| `UserRegistration` | Extended personal metadata and profile information |
+| `AddCategory` | Category labels and sorting structure |
+| `AddGrocery` | Catalog items and grocery inventory |
+| `GroceryItems` | Granular product attributes (weight, SKU, variants) |
+| `GroceryOrder` | Order manifests, statuses, and customer mappings |
+| `AddPayment` | Transaction ledgers and settlement logs |
+| `AddReviews` | Customer ratings, reviews, and timestamps |
+| `OtpCode` | Temporal tokens for account validation |
+
+lidation
